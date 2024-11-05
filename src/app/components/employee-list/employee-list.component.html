@@ -1,0 +1,47 @@
+@if(employeeList && employeeList.length > 0) {
+<div class="flex justify-end p-8"><button routerLink="/create-employee" mat-raised-button color="primary">Add Employee</button></div>
+<div class="mat-elevation-z8 w-full">
+    <table mat-table [dataSource]="employeeList">
+        <ng-container matColumnDef="id"> <!--Cho ID-->
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container><!--Cho ID__END-->
+
+        <ng-container matColumnDef="tenNhanVien"><!--Tên Nhân Viên-->
+            <th mat-header-cell *matHeaderCellDef> Tên Nhân Viên </th>
+            <td mat-cell *matCellDef="let element"> {{element.tenNhanVien}} </td>
+        </ng-container><!--Tên Nhân Viên_END-->
+
+        <ng-container matColumnDef="email"><!--Email-->
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container><!--Email_END-->
+
+        <ng-container matColumnDef="tuoi"><!--Tuổi-->
+            <th mat-header-cell *matHeaderCellDef> Tuổi </th>
+            <td mat-cell *matCellDef="let element"> {{element.tuoi}} </td>
+        </ng-container><!--Tuổi_END-->
+
+        <ng-container matColumnDef="sdt"><!--Số điện thoại-->
+            <th mat-header-cell *matHeaderCellDef> SĐT </th>
+            <td mat-cell *matCellDef="let element"> {{element.sdt}} </td>
+        </ng-container><!--Số điện thoại_END-->
+
+        <ng-container matColumnDef="diaChi"><!--Địa Chỉ-->
+            <th mat-header-cell *matHeaderCellDef> Địa Chỉ </th>
+            <td mat-cell *matCellDef="let element"> {{element.diaChi}} </td>
+        </ng-container><!--Địa Chỉ_END-->
+
+        <ng-container matColumnDef="action"><!--action-->
+            <th mat-header-cell *matHeaderCellDef> Chức Năng </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="primary" (click)="edit(element.id)">Edit</button>
+                <button mat-raised-button color="warn" (click)="delete(element.id)">Delete</button>
+            </td>
+        </ng-container><!--action_END-->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+}

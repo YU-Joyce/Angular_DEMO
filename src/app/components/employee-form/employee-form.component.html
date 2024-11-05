@@ -1,0 +1,53 @@
+<div class="p-8 mt-4">
+    <div class="shadow p-6">
+        @if(isEdit){
+            <h4>Edit Employee Detail</h4>
+        }@else {
+            <h4>Create Employee</h4>
+        }
+        <form [formGroup]="employeeForm" (ngSubmit)="save()">
+            <div class="w-full flex flex-warp">
+                <mat-form-field class="w-full">
+                    <mat-label>Tên Nhân Viên</mat-label>
+                    <input type="text" matInput placeholder="" formControlName="tenNhanVien">
+                </mat-form-field>
+            </div>
+
+            <div class="w-full flex flex-warp">
+                <mat-form-field class="w-full">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput placeholder="" formControlName="email">
+                </mat-form-field>
+            </div>
+
+            <div class="w-full flex flex-warp">
+                <mat-form-field class="w-full">
+                    <mat-label>Tuổi</mat-label>
+                    <input type="number" matInput placeholder="" formControlName="tuoi">
+                </mat-form-field>
+            </div>
+
+            <div class="w-full flex flex-warp">
+                <mat-form-field class="w-full">
+                    <mat-label>SĐT</mat-label>
+                    <input type="text" matInput placeholder="" formControlName="sdt">
+                </mat-form-field>
+            </div>
+
+            <div class="w-full flex flex-warp">
+                <mat-form-field class="w-full">
+                    <mat-label>Địa Chỉ</mat-label>
+                    <input type="text" matInput placeholder="" formControlName="diaChi">
+                </mat-form-field>
+            </div>
+
+            <div class="flex justify-center">
+                @if(isEdit){
+                    <button mat-raised-button color="primary" [disabled]="!employeeForm.valid">UpDate</button>
+                }@else {
+                    <button mat-raised-button color="primary" [disabled]="!employeeForm.valid">Add</button>
+                }
+            </div>
+        </form>
+    </div>
+</div>

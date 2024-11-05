@@ -1,0 +1,7 @@
+h4 {
+    font-weight: bold;          /* Chữ in đậm */
+    color: black;               /* Màu đen */
+    font-size: 1.5rem;          /* Kích thước chữ vừa phải */
+    text-align: center;         /* Canh giữa khung */
+    margin-bottom: 1rem;        /* Khoảng cách dưới */
+}

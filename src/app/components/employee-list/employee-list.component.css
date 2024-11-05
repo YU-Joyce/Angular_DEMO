@@ -1,0 +1,38 @@
+/* CSS cho bảng */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+}
+
+/* CSS cho phần tiêu đề */
+th {
+    padding: 12px; /* Khoảng cách bên trong ô */
+    text-align: left; /* Căn lề bên trái */
+    border: 1px solid #ddd; /* Kẻ ô */
+    color: black; /* Màu chữ đen */
+    font-weight: bold; /* Chữ in đậm */
+    white-space: nowrap; /* Ngăn không cho ngắt đoạn */
+}
+
+
+/* CSS cho các ô dữ liệu */
+td {
+    padding: 12px; /* Khoảng cách bên trong ô */
+    text-align: left; /* Căn lề bên trái */
+    border: 1px solid #ddd; /* Kẻ ô */
+    transition: background-color 0.3s; /* Thêm hiệu ứng chuyển màu nền */
+}
+
+/* Đảm bảo "Tên Nhân Viên" và "Địa Chỉ" hiển thị trên một dòng */
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(6),
+td:nth-child(6) {
+    white-space: nowrap; /* Ngăn ngắt dòng */
+}
+
+/* Hiệu ứng khi di chuyển chuột vào thẻ <td> */
+td:hover {
+    background-color: #f1f1f1; /* Màu nền khi di chuột */
+}
+
